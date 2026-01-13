@@ -133,7 +133,7 @@
         /* Mobile Display Styles */
         .mobile-display-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
         
@@ -179,17 +179,10 @@
             80% { transform: translate(2px, -2px); }
             100% { transform: translate(0); }
         }
-        
-        /* Parallax Effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
+    
     
     <!-- Animated Background Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
@@ -352,7 +345,7 @@
                             <div class="text-gray-400">Original Products</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-gold mb-2">50+</div>
+                            <div class="text-3xl font-bold text-gold mb-2">200+</div>
                             <div class="text-gray-400">Models Available</div>
                         </div>
                     </div>
@@ -373,7 +366,7 @@
             </div>
             
             <!-- Featured Mobiles Grid -->
-            <div class="mobile-display-grid mb-12">
+            <div id="featuredMobilesGrid" class="mobile-display-grid mb-12">
                 <!-- Featured mobiles will be dynamically generated -->
             </div>
             
@@ -386,6 +379,82 @@
             </div>
         </div>
     </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body { background:#000; color:#fff }
+.mobile-card { transition:.3s }
+.mobile-card:hover { transform:translateY(-8px) }
+</style>
+</head>
+
+<body>
+
+<section class="py-16 px-6">
+  <h1 class="text-4xl font-bold text-center mb-10 text-yellow-400">
+     MOBILES PRICE LIST
+  </h1>
+
+  <div id="mobileGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+  </div>
+</section>
+
+
+<script>
+const mobiles = [
+    {name: "IPHONE 13", ram:"_",price:"₹46400", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdhNMY_-XJy_5gBq3lKRpT8L8rc3YOYYKPOw&s"}, 
+    {name:"iphone 15",ram: "_", price:"₹54900", img:"https://m.media-amazon.com/images/I/71d7rfSl0wL._AC_UF1000,1000_QL80_.jpg"},  
+    {name:"i phone 16" , ram:"_", price:"₹64900", img:"https://www.imagineonline.store/cdn/shop/files/iPhone_16_Pink_PDP_Image_Position_1__en-IN_4dccfc5a-39a9-4652-9c28-825d511fb1ee.jpg?v=1759209993"},
+    {name:"i phone 17", ram:"_", price:"₹82900", img:"https://iplanet.one/cdn/shop/files/IMG-18071517_m_jpeg_1.jpg?v=1757449740&width=823"},
+  {name:"OPPO A5x 5G",ram:"4GB+64GB",price:"₹11,499",img:"https://th.bing.com/th/id/OPAC.9ZHgQPTcwzx44Q474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO K13x 5G",ram:"4GB+128GB",price:"₹12,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13x-5g-1.jpg"},
+  {name:"OPPO A5x 5G",ram:"4GB+128GB",price:"₹12,499",img:"https://th.bing.com/th/id/OPAC.9ZHgQPTcwzx44Q474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO A6X 5G",ram:"4GB+64GB",price:"₹12,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a6x-5g-1.jpg"},
+  {name:"OPPO K13x 5G",ram:"6GB+128GB",price:"₹13,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13x-5g-1.jpg"},
+  {name:"OPPO A6X 5G",ram:"4GB+128GB",price:"₹13,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a6x-5g-1.jpg"},
+  {name:"OPPO A5x 5G",ram:"6GB+128GB",price:"₹13,999",img:"https://cdn.findprix.com/images/products/3478d1.webp"},
+  {name:"OPPO A6X 5G",ram:"6GB+128GB",price:"₹14,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a6x-5g-1.jpg"},
+  {name:"OPPO K13x 5G",ram:"8GB+128GB",price:"₹15,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13x-5g-1.jpg"},
+  {name:"OPPO A5 5G",ram:"6GB+128GB",price:"₹16,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a5-5g-1.jpg"},
+  {name:"OPPO A5 5G",ram:"8GB+128GB",price:"₹17,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a5-5g-1.jpg"},
+  {name:"OPPO A5 Pro 5G",ram:"8GB+128GB",price:"₹18,999",img:"https://th.bing.com/th/id/OIP.xMqUjxhYGedJ-qmtXtUMsAHaOC?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"},
+  {name:"OPPO K13 5G",ram:"8GB+128GB",price:"₹19,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13-5g-1.jpg"},
+  {name:"OPPO K13 5G",ram:"8GB+256GB",price:"₹21,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13-5g-1.jpg"},
+  {name:"OPPO A5 Pro 5G",ram:"8GB+256GB",price:"₹20,999",img:"https://cdn.manilastandard.net/wp-content/uploads/2025/03/oppo-a5-pro-main.jpg"},
+  {name:"OPPO F31 5G",ram:"8GB+128GB",price:"₹24,999",img:"https://th.bing.com/th?id=OPAC.eEYa%2foiAjF%2bzCQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO F31 5G",ram:"8GB+256GB",price:"₹26,999",img:"https://th.bing.com/th?id=OPAC.eEYa%2foiAjF%2bzCQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO F31 Pro 5G",ram:"8GB+128GB",price:"₹27,999",img:"https://th.bing.com/th/id/OPAC.C0pOTEQO3sqV3w474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO K13 Turbo 5G",ram:"8GB+128GB",price:"₹27,999",img:"https://tse2.mm.bing.net/th/id/OIP.8_uCzMBMf0a0fDoznDwn9AHaJL?rs=1&pid=ImgDetMain&o=7&rm=3"},
+  {name:"OPPO F31 Pro 5G",ram:"8GB+256GB",price:"₹29,999",img:"https://th.bing.com/th/id/OPAC.CsVvjogjM7q66g474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO K13 Turbo 5G",ram:"8GB+256GB",price:"₹29,999",img:"https://cdn.beebom.com/mobile/oppo-k13-turbo-pro-front-back.png"},
+  {name:"OPPO F31 Pro 5G",ram:"12GB+256GB",price:"₹31,999",img:"https://th.bing.com/th/id/OPAC.CsVvjogjM7q66g474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO F31 Pro+ 5G",ram:"8GB+256GB",price:"₹32,999",img:"https://www.mobiledokan.com/media/oppo-f31-pro-plus-white-official-image.webp"},
+  {name:"OPPO F31 Pro+ 5G",ram:"12GB+256GB",price:"₹34,999",img:"https://th.bing.com/th?id=OPAC.2Kj%2b3%2bJIMDEtXA474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO Reno 14 5G",ram:"8GB+256GB",price:"₹42,999",img:"https://th.bing.com/th/id/OPAC.jMIwkgUI0oarog474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO Reno 14 Pro 5G",ram:"12GB+256GB",price:"₹54,999",img:"https://th.bing.com/th/id/OPAC.ByR7LbKxZuWcrg474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO Find X9",ram:"12GB+256GB",price:"₹74,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x9-1.jpg"},
+  {name:"OPPO Find X9",ram:"16GB+512GB",price:"₹84,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x9-1.jpg"}
+];
+
+const grid = document.getElementById("mobileGrid");
+
+mobiles.forEach(m => {
+  grid.innerHTML += `
+    <div class="mobile-card bg-gray-900 p-4 rounded-xl shadow-lg">
+      <img src="${m.img}" class="w-full h-40 object-contain mb-4">
+      <h3 class="font-bold">${m.name}</h3>
+      <p class="text-gray-400">${m.ram}</p>
+      <p class="text-yellow-400 font-bold mt-1">${m.price}</p>
+      <a href="https://wa.me/918894880029?text=I want ${m.name} ${m.ram}"
+         class="block mt-4 text-center bg-green-500 text-black py-2 rounded-lg font-bold">
+         WhatsApp
+      </a>
+    </div>
+  `;
+});
+</script>
+
 
     <!-- All Mobile Phones Display -->
     <section id="all-mobiles" class="py-20 px-4 bg-black">
@@ -412,16 +481,16 @@
                 <button class="category-btn px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors" data-category="oneplus">
                     <i class="fas fa-plus mr-2"></i>OnePlus
                 </button>
-                <button class="category-btn px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors" data-category="google">
-                    <i class="fab fa-google mr-2"></i>Google
+                <button class="category-btn px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors" data-category="oppo">
+                    <i class="fas fa-mobile mr-2"></i>Oppo
                 </button>
                 <button class="category-btn px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors" data-category="other">
-                    <i class="fas fa-ellipsis-h mr-2"></i>Others
+                    <i class="fas fa-ellipsis-h mr-2"></i>Other Brands
                 </button>
             </div>
             
             <!-- All Mobiles Grid -->
-            <div class="mobile-display-grid mb-12">
+            <div id="allMobilesGrid" class="mobile-display-grid mb-12">
                 <!-- All mobiles will be dynamically generated -->
             </div>
             
@@ -484,31 +553,47 @@
                                 class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all duration-300"
                                 required>
                             <option value="">Select Brand/Model</option>
-                            <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
-                            <option value="iPhone 15 Pro">iPhone 15 Pro</option>
-                            <option value="iPhone 15">iPhone 15</option>
-                            <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
-                            <option value="iPhone 14 Pro">iPhone 14 Pro</option>
-                            <option value="Samsung S24 Ultra">Samsung Galaxy S24 Ultra</option>
-                            <option value="Samsung S24+">Samsung Galaxy S24+</option>
-                            <option value="Samsung Z Fold 5">Samsung Z Fold 5</option>
-                            <option value="Samsung Z Flip 5">Samsung Z Flip 5</option>
-                            <option value="OnePlus 12">OnePlus 12</option>
-                            <option value="OnePlus 11R">OnePlus 11R</option>
-                            <option value="OnePlus Nord CE 3">OnePlus Nord CE 3</option>
-                            <option value="Google Pixel 8 Pro">Google Pixel 8 Pro</option>
-                            <option value="Google Pixel 8">Google Pixel 8</option>
-                            <option value="Nothing Phone 2">Nothing Phone (2)</option>
-                            <option value="Nothing Phone 1">Nothing Phone (1)</option>
-                            <option value="Vivo X100 Pro">Vivo X100 Pro</option>
-                            <option value="Vivo V29 Pro">Vivo V29 Pro</option>
-                            <option value="Oppo Find N3 Flip">Oppo Find N3 Flip</option>
-                            <option value="Oppo Reno 10 Pro">Oppo Reno 10 Pro</option>
-                            <option value="Realme GT 2 Pro">Realme GT 2 Pro</option>
-                            <option value="Realme Narzo 60 Pro">Realme Narzo 60 Pro</option>
-                            <option value="Xiaomi 13 Pro">Xiaomi 13 Pro</option>
-                            <option value="Xiaomi 13T Pro">Xiaomi 13T Pro</option>
-                            <option value="Other">Other Models</option>
+                            
+  <option value="iPhone 13">iPhone 13</option>
+  <option value="iPhone 15">iPhone 15</option>
+  <option value="iPhone 16">iPhone 16</option>
+  <option value="iPhone 17">iPhone 17</option>
+                            <option value="OPPO A5x 5G (4+64GB)">OPPO A5x 5G (4+64GB)</option>
+<option value="OPPO K13x 5G (4+128GB)">OPPO K13x 5G (4+128GB)</option>
+<option value="OPPO A5x 5G (4+128GB)">OPPO A5x 5G (4+128GB)</option>
+<option value="OPPO A6X 5G (4+64GB)">OPPO A6X 5G (4+64GB)</option>
+<option value="OPPO K13x 5G (6+128GB)">OPPO K13x 5G (6+128GB)</option>
+<option value="OPPO A6X 5G (4+128GB)">OPPO A6X 5G (4+128GB)</option>
+<option value="OPPO A5x 5G (6+128GB)">OPPO A5x 5G (6+128GB)</option>
+<option value="OPPO A6X 5G (6+128GB)">OPPO A6X 5G (6+128GB)</option>
+<option value="OPPO K13x 5G (8+128GB)">OPPO K13x 5G (8+128GB)</option>
+<option value="OPPO A5 5G (6+128GB)">OPPO A5 5G (6+128GB)</option>
+<option value="OPPO A5 5G (8+128GB)">OPPO A5 5G (8+128GB)</option>
+<option value="OPPO A5 PRO 5G (8+128GB)">OPPO A5 PRO 5G (8+128GB)</option>
+<option value="OPPO K13 5G (8+128GB)">OPPO K13 5G (8+128GB)</option>
+<option value="OPPO K13 5G (8+256GB)">OPPO K13 5G (8+256GB)</option>
+<option value="OPPO A5 PRO 5G (8+256GB)">OPPO A5 PRO 5G (8+256GB)</option>
+<option value="OPPO F31 5G (8+128GB)">OPPO F31 5G (8+128GB)</option>
+<option value="OPPO F31 5G (8+256GB)">OPPO F31 5G (8+256GB)</option>
+<option value="OPPO F31 PRO 5G (8+128GB)">OPPO F31 PRO 5G (8+128GB)</option>
+<option value="OPPO K13 TURBO 5G (8+128GB)">OPPO K13 TURBO 5G (8+128GB)</option>
+<option value="OPPO F31 PRO 5G (8+256GB)">OPPO F31 PRO 5G (8+256GB)</option>
+<option value="OPPO K13 TURBO 5G (8+256GB)">OPPO K13 TURBO 5G (8+256GB)</option>
+<option value="OPPO F31 PRO 5G (12+256GB)">OPPO F31 PRO 5G (12+256GB)</option>
+<option value="OPPO F31 PRO+ 5G (8+256GB)">OPPO F31 PRO+ 5G (8+256GB)</option>
+<option value="OPPO F31 PRO+ 5G (12+256GB)">OPPO F31 PRO+ 5G (12+256GB)</option>
+<option value="OPPO RENO 14 5G (8+256GB)">OPPO RENO 14 5G (8+256GB)</option>
+<option value="OPPO K13 TURBO PRO 5G (8+256GB)">OPPO K13 TURBO PRO 5G (8+256GB)</option>
+<option value="OPPO K13 TURBO PRO 5G (12+256GB)">OPPO K13 TURBO PRO 5G (12+256GB)</option>
+<option value="OPPO RENO 14 5G (8+256GB) DIWALI EDITION">OPPO RENO 14 5G (8+256GB) DIWALI EDITION</option>
+<option value="OPPO RENO 14 5G (12+256GB)">OPPO RENO 14 5G (12+256GB)</option>
+<option value="OPPO RENO 14 5G (12+512GB)">OPPO RENO 14 5G (12+512GB)</option>
+<option value="OPPO RENO 14 PRO 5G (12+256GB)">OPPO RENO 14 PRO 5G (12+256GB)</option>
+<option value="OPPO RENO 14 PRO 5G (12+512GB)">OPPO RENO 14 PRO 5G (12+512GB)</option>
+<option value="OPPO FIND X9 (12+256GB)">OPPO FIND X9 (12+256GB)</option>
+<option value="OPPO FIND X9 (16+512GB)">OPPO FIND X9 (16+512GB)</option>
+
+                     
                         </select>
                     </div>
                     
@@ -665,7 +750,8 @@
 
     <!-- JavaScript -->
     <script>
-        // Enhanced Mobile Data
+        // Complete Mobile Database
         const allMobiles = [
-            // Apple (17 models)
-            { id: 1, brand: 'apple', name: 'iPhone 15 Pro Max', price: '₹1,59,900
+            // Apple iPhones
+            { id: 1, brand: 'apple', name: 'iPhone 15 Pro Max', price: '₹1,59,900', storage: '256GB', featured: true },
+            { id: 2, brand: 'apple', name
