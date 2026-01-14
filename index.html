@@ -200,9 +200,22 @@
             80% { transform: translate(2px, -2px); }
             100% { transform: translate(0); }
         }
+        .mobile-logo {
+  width: 120px;          /* ideal mobile size */
+  height: auto;          /* keeps aspect ratio */
+  display: block;
+  margin: 0 auto;        /* center horizontally */
+  object-fit: contain;  /* prevents distortion */
+}
+
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
+    <img 
+  src="https://i.ytimg.com/vi/waReNmiys9I/maxresdefault.jpg" 
+  alt="Mobile Store Logo" 
+  class="mobile-logo">
+
     
     
     
@@ -233,7 +246,11 @@
                     <p class="text-xs text-gray-400 tracking-widest animate__animated animate__fadeIn">BARUHI</p>
                 </div>
             </div>
-            
+              <img 
+  src="SHIV.jpeg" 
+  alt="_" 
+  class="mobile-logo">
+
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-gold transition-colors">Home</a>
