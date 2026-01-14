@@ -200,16 +200,20 @@
             80% { transform: translate(2px, -2px); }
             100% { transform: translate(0); }
         }
-        .mobile-logo {
-  width: 140px;        /* adjust as needed */
+       .mobile-logo {
+  width: 120px;          /* SMALL size */
   height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+
+  /* Slide animation */
   animation: slideIn 1s ease-out forwards;
 }
 
-/* Slide animation */
+/* Slide from left */
 @keyframes slideIn {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-50px);
     opacity: 0;
   }
   to {
@@ -217,6 +221,7 @@
     opacity: 1;
   }
 }
+
 
     </style>
 </head>
@@ -812,8 +817,4 @@ mobiles.forEach(m => {
 
     <!-- JavaScript -->
     <script>
-        // Complete Mobile Database
-        const allMobiles = [
-            // Apple iPhones
-            { id: 1, brand: 'apple', name: 'iPhone 15 Pro Max', price: '₹1,59,900', storage: '256GB', featured: true },
-            { id: 2, brand: 'apple', name
+       
