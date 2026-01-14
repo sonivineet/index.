@@ -201,11 +201,21 @@
             100% { transform: translate(0); }
         }
         .mobile-logo {
-  width: 120px;          /* ideal mobile size */
-  height: auto;          /* keeps aspect ratio */
-  display: block;
-  margin: 0 auto;        /* center horizontally */
-  object-fit: contain;  /* prevents distortion */
+  width: 140px;        /* adjust as needed */
+  height: auto;
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* Slide animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
     </style>
@@ -247,7 +257,7 @@
                 </div>
             </div>
               <img 
-  src="SHIV.jpeg" 
+  src="sm.jpeg" 
   alt="_" 
   class="mobile-logo">
 
@@ -807,4 +817,3 @@ mobiles.forEach(m => {
             // Apple iPhones
             { id: 1, brand: 'apple', name: 'iPhone 15 Pro Max', price: '₹1,59,900', storage: '256GB', featured: true },
             { id: 2, brand: 'apple', name
-
