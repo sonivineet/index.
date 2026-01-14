@@ -390,6 +390,18 @@ body { background:#000; color:#fff }
 </head>
 
 <body>
+    <section id="price-list" class="py-16 px-6 bg-black">
+  <h2 class="text-4xl font-bold text-center mb-10 text-yellow-400">
+    MOBILES PRICE LIST
+  </h2>
+
+  <div
+    id="mobileGrid"
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 
+           gap-4 max-w-7xl mx-auto"
+  ></div>
+</section>
+
 
 <section class="py-16 px-6">
   <h1 class="text-4xl font-bold text-center mb-10 text-yellow-400">
@@ -403,38 +415,38 @@ body { background:#000; color:#fff }
 
 <script>
 const mobiles = [
-    {name: "IPHONE 13", ram:"_",price:"₹46400", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdhNMY_-XJy_5gBq3lKRpT8L8rc3YOYYKPOw&s"}, 
-    {name:"iphone 15",ram: "_", price:"₹54900", img:"https://m.media-amazon.com/images/I/71d7rfSl0wL._AC_UF1000,1000_QL80_.jpg"},  
+    {name: "IPHONE 13", ram:"_",price:"₹46400", img:"https://tse1.mm.bing.net/th/id/OIP.tAXWhymBm4Kw1BMKGiCwcQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"}, 
+    {name:"iphone 15",ram: "_", price:"₹54900", img:"https://mcprod.jumbo.ae/media/catalog/product/i/p/iphone_15_plus_blue_pdp_image_position-1__en-me.jpg"},  
     {name:"i phone 16" , ram:"_", price:"₹64900", img:"https://www.imagineonline.store/cdn/shop/files/iPhone_16_Pink_PDP_Image_Position_1__en-IN_4dccfc5a-39a9-4652-9c28-825d511fb1ee.jpg?v=1759209993"},
     {name:"i phone 17", ram:"_", price:"₹82900", img:"https://iplanet.one/cdn/shop/files/IMG-18071517_m_jpeg_1.jpg?v=1757449740&width=823"},
-  {name:"OPPO A5x 5G",ram:"4GB+64GB",price:"₹11,499",img:"https://th.bing.com/th/id/OPAC.9ZHgQPTcwzx44Q474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO K13x 5G",ram:"4GB+128GB",price:"₹12,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13x-5g-1.jpg"},
+  {name:"OPPO A5x 5G",ram:"4GB+64GB",price:"₹11,499",img:"https://cdn.beebom.com/mobile/oppo-a5x-5g-front-back.png"},
+  {name:"OPPO K13x 5G",ram:"4GB+128GB",price:"₹12,499",img:"https://www.mobigyaan.com/wp-content/uploads/2025/06/OPPO-K13x-5G-colors-teaser.jpg"},
   {name:"OPPO A5x 5G",ram:"4GB+128GB",price:"₹12,499",img:"https://th.bing.com/th/id/OPAC.9ZHgQPTcwzx44Q474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO A6X 5G",ram:"4GB+64GB",price:"₹12,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a6x-5g-1.jpg"},
-  {name:"OPPO K13x 5G",ram:"6GB+128GB",price:"₹13,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13x-5g-1.jpg"},
-  {name:"OPPO A6X 5G",ram:"4GB+128GB",price:"₹13,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a6x-5g-1.jpg"},
-  {name:"OPPO A5x 5G",ram:"6GB+128GB",price:"₹13,999",img:"https://cdn.findprix.com/images/products/3478d1.webp"},
-  {name:"OPPO A6X 5G",ram:"6GB+128GB",price:"₹14,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a6x-5g-1.jpg"},
-  {name:"OPPO K13x 5G",ram:"8GB+128GB",price:"₹15,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13x-5g-1.jpg"},
-  {name:"OPPO A5 5G",ram:"6GB+128GB",price:"₹16,499",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a5-5g-1.jpg"},
-  {name:"OPPO A5 5G",ram:"8GB+128GB",price:"₹17,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-a5-5g-1.jpg"},
-  {name:"OPPO A5 Pro 5G",ram:"8GB+128GB",price:"₹18,999",img:"https://th.bing.com/th/id/OIP.xMqUjxhYGedJ-qmtXtUMsAHaOC?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"},
-  {name:"OPPO K13 5G",ram:"8GB+128GB",price:"₹19,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13-5g-1.jpg"},
-  {name:"OPPO K13 5G",ram:"8GB+256GB",price:"₹21,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-k13-5g-1.jpg"},
+  {name:"OPPO A6X 5G",ram:"4GB+64GB",price:"₹12,499",img:"https://www.mobiledokan.com/media/oppo-a6x-5g-ice-blue-official-image.webp"},
+  {name:"OPPO K13x 5G",ram:"6GB+128GB",price:"₹13,999",img:"https://www.mobigyaan.com/wp-content/uploads/2025/06/OPPO-K13x-5G-colors-teaser.jpg"},
+  {name:"OPPO A6X 5G",ram:"4GB+128GB",price:"₹13,499",img:"https://www.mobiledokan.com/media/oppo-a6x-5g-ice-blue-official-image.webp"},
+  {name:"OPPO A5x 5G",ram:"6GB+128GB",price:"₹13,999",img:"https://tse3.mm.bing.net/th/id/OIP.SyOtDNFY3ekRW_ADFaSjEwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"},
+  {name:"OPPO A6X 5G",ram:"6GB+128GB",price:"₹14,999",img:"https://www.mobiledokan.com/media/oppo-a6x-5g-ice-blue-official-image.webp"},
+  {name:"OPPO K13x 5G",ram:"8GB+128GB",price:"₹15,999",img:"https://www.mobigyaan.com/wp-content/uploads/2025/06/OPPO-K13x-5G-colors-teaser.jpg"},
+  {name:"OPPO A5 5G",ram:"6GB+128GB",price:"₹16,499",img:"https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a5-series-en/v3/navigation/440-440-green.png"},
+  {name:"OPPO A5 5G",ram:"8GB+128GB",price:"₹17,999",img:"https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/a5-series-en/v3/navigation/440-440-green.png"},
+  {name:"OPPO A5 Pro 5G",ram:"8GB+128GB",price:"₹18,999",img:"https://cdn.manilastandard.net/wp-content/uploads/2025/03/oppo-a5-pro-main.jpg"},
+  {name:"OPPO K13 5G",ram:"8GB+128GB",price:"₹19,999",img:"https://static.digit.in/Oppo-K13-5G-.png"},
+  {name:"OPPO K13 5G",ram:"8GB+256GB",price:"₹21,999",img:"https://static.digit.in/Oppo-K13-5G-.png"},
   {name:"OPPO A5 Pro 5G",ram:"8GB+256GB",price:"₹20,999",img:"https://cdn.manilastandard.net/wp-content/uploads/2025/03/oppo-a5-pro-main.jpg"},
-  {name:"OPPO F31 5G",ram:"8GB+128GB",price:"₹24,999",img:"https://th.bing.com/th?id=OPAC.eEYa%2foiAjF%2bzCQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO F31 5G",ram:"8GB+256GB",price:"₹26,999",img:"https://th.bing.com/th?id=OPAC.eEYa%2foiAjF%2bzCQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO F31 Pro 5G",ram:"8GB+128GB",price:"₹27,999",img:"https://th.bing.com/th/id/OPAC.C0pOTEQO3sqV3w474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO K13 Turbo 5G",ram:"8GB+128GB",price:"₹27,999",img:"https://tse2.mm.bing.net/th/id/OIP.8_uCzMBMf0a0fDoznDwn9AHaJL?rs=1&pid=ImgDetMain&o=7&rm=3"},
-  {name:"OPPO F31 Pro 5G",ram:"8GB+256GB",price:"₹29,999",img:"https://th.bing.com/th/id/OPAC.CsVvjogjM7q66g474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO K13 Turbo 5G",ram:"8GB+256GB",price:"₹29,999",img:"https://cdn.beebom.com/mobile/oppo-k13-turbo-pro-front-back.png"},
-  {name:"OPPO F31 Pro 5G",ram:"12GB+256GB",price:"₹31,999",img:"https://th.bing.com/th/id/OPAC.CsVvjogjM7q66g474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO F31 Pro+ 5G",ram:"8GB+256GB",price:"₹32,999",img:"https://www.mobiledokan.com/media/oppo-f31-pro-plus-white-official-image.webp"},
-  {name:"OPPO F31 Pro+ 5G",ram:"12GB+256GB",price:"₹34,999",img:"https://th.bing.com/th?id=OPAC.2Kj%2b3%2bJIMDEtXA474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1"},
+  {name:"OPPO F31 5G",ram:"8GB+128GB",price:"₹24,999",img:"https://cdn.beebom.com/mobile/oppo-f31-5g-front-back-2.png"},
+  {name:"OPPO F31 5G",ram:"8GB+256GB",price:"₹26,999",img:"https://tse1.mm.bing.net/th/id/OIP.4l1aXO3HL0n0KAZNVx0HgAHaHa?pid=ImgDet&w=474&h=474&rs=1&o=7&rm=3"},
+  {name:"OPPO F31 Pro 5G",ram:"8GB+128GB",price:"₹27,999",img:"https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/f31-pro-series-in/f31-pro-5g/listpage/492-600-yellow.png"},
+  {name:"OPPO K13 Turbo 5G",ram:"8GB+128GB",price:"₹27,999",img:"https://axpertmedia.in/wp-content/uploads/2025/08/Oppo_K13_Turbo_1754378903226_1754378903466-1.webp"},
+  {name:"OPPO F31 Pro 5G",ram:"8GB+256GB",price:"₹29,999",img:"https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/f31-pro-series-in/f31-pro-5g/listpage/492-600-yellow.png"},
+  {name:"OPPO K13 Turbo 5G",ram:"8GB+256GB",price:"₹29,999",img:"https://axpertmedia.in/wp-content/uploads/2025/08/Oppo_K13_Turbo_1754378903226_1754378903466-1.webp"},
+  {name:"OPPO F31 Pro 5G",ram:"12GB+256GB",price:"₹31,999",img:"https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/f31-pro-series-in/f31-pro-5g/listpage/492-600-yellow.png"},
+  {name:"OPPO F31 Pro+ 5G",ram:"8GB+256GB",price:"₹32,999",img:"https://imgeng.jagran.com/images/2025/09/06/article/image/OPPOF31SERIES-1757168241275.webp"},
+  {name:"OPPO F31 Pro+ 5G",ram:"12GB+256GB",price:"₹34,999",img:"https://imgeng.jagran.com/images/2025/09/06/article/image/OPPOF31SERIES-1757168241275.webp"},
   {name:"OPPO Reno 14 5G",ram:"8GB+256GB",price:"₹42,999",img:"https://th.bing.com/th/id/OPAC.jMIwkgUI0oarog474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
   {name:"OPPO Reno 14 Pro 5G",ram:"12GB+256GB",price:"₹54,999",img:"https://th.bing.com/th/id/OPAC.ByR7LbKxZuWcrg474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1"},
-  {name:"OPPO Find X9",ram:"12GB+256GB",price:"₹74,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x9-1.jpg"},
-  {name:"OPPO Find X9",ram:"16GB+512GB",price:"₹84,999",img:"https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x9-1.jpg"}
+  {name:"OPPO Find X9",ram:"12GB+256GB",price:"₹74,999",img:"https://th.bing.com/th/id/OIP.JsrUMhvA6rs8r8JVq-YtdAHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"},
+  {name:"OPPO Find X9",ram:"16GB+512GB",price:"₹84,999",img:"https://th.bing.com/th/id/OIP.JsrUMhvA6rs8r8JVq-YtdAHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"}
 ];
 
 const grid = document.getElementById("mobileGrid");
