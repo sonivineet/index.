@@ -201,19 +201,17 @@
             100% { transform: translate(0); }
         }
        .mobile-logo {
-  width: 120px;          /* SMALL size */
-  height: auto;
-  border-radius: 10px;
+  width: 60px;        /* VERY SMALL */
+  height: 60px;       /* Force square */
   object-fit: cover;
+  border-radius: 8px;
 
-  /* Slide animation */
-  animation: slideIn 1s ease-out forwards;
+  animation: slideIn 0.8s ease-out forwards;
 }
 
-/* Slide from left */
 @keyframes slideIn {
   from {
-    transform: translateX(-50px);
+    transform: translateX(-30px);
     opacity: 0;
   }
   to {
